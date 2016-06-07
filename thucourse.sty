@@ -1,0 +1,60 @@
+\ProvidesPackage{thucourse}
+
+\usepackage[UTF8, scheme=plain, fontset=none]{ctex}
+\setmainfont{Sabon LT Std}
+\setsansfont{Myriad Pro}
+\setmonofont{Input Mono}
+\setCJKmainfont{Songti SC}
+\setCJKsansfont{PingFang SC}
+\setCJKmonofont{Kaiti SC}
+
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{siunitx}
+
+\newcommand{\zskip}{\!\!\!}
+\newcommand{\Zskip}{\zskip\zskip\zskip}
+
+\newenvironment<>{background}
+	{\setbeamercolor{block title}{bg=darkgray}\begin{block}{\tiny\bf 物理背景}\begin{scriptsize}}
+  {\end{scriptsize}\end{block}}
+
+\newenvironment<>{concept}
+	{\begin{alertblock}{\tiny\bf 物理概念}}
+  {\end{alertblock}}
+
+\newenvironment<>{physics}
+	{\begin{block}{\tiny\bf 物理图像}\begin{scriptsize}}
+  {\end{scriptsize}\end{block}}
+  
+\newenvironment<>{formula}[1]
+	{\begin{minipage}{\linewidth}\begin{exampleblock}{\tiny\bf #1}}
+  {\end{exampleblock}\end{minipage}\\[10pt]}
+  
+\newenvironment<>{derivation}
+	{\begin{minipage}{\linewidth}\setbeamercolor{block title}{bg=lightgray}\begin{block}{\tiny\bf 推导}\begin{scriptsize}}
+  {\end{scriptsize}\end{block}\end{minipage}\\[10pt]}
+
+%--------------------------------------------------------------------------------
+
+\mode<article>
+	{\usepackage{fullpage}}
+\mode<presentation>
+	{\usetheme{Darmstadt}
+	 \usecolortheme{whale}
+	 \usefonttheme[onlymath]{serif}}
+
+\graphicspath{{figures/}}
+
+\AtBeginDocument
+	{\sisetup{math-rm=\mathrm, text-rm=\rmfamily}}
+	
+\AtBeginSection[]
+  {
+  	\begin{frame}
+      \frametitle{本节目录}
+      \tableofcontents[currentsection,hideothersubsections]
+    \end{frame}
+  }
+
+\endinput
