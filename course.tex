@@ -5,7 +5,7 @@
 %\documentclass[a4paper]{article}
 %\usepackage{beamerarticle}
 \usepackage{thucourse}
-\includeonlyframes{current}
+%\includeonlyframes{current}
 
 \title{光阴极物理}
 \subtitle{高亮度电子束物理及应用}
@@ -244,18 +244,18 @@
 	\[n(u, v, w) = \dfrac{m^{\frac{3}{2}}}{2\pi\cdot2^{\frac{3}{2}}}\cdot\frac{1}{\sqrt{\varepsilon}}\cdot n(\varepsilon)\]}
 	\only<3>{
 	代入 $n(\varepsilon)$ 并做变量代换，即得到：
-	\[n(u, v, w) = 2\left(\frac{m}{h}\right)^3\frac{dudvdw}{e^{\left[\frac{1}{2}m\left(u^2+v^2+w^2\right)-\mu\right]/kT}+1}\]}
+	\[n(u, v, w) = 2\left(\frac{m}{h}\right)^3\frac{1}{e^{\left[\frac{1}{2}m\left(u^2+v^2+w^2\right)-\mu\right]/kT}+1}\]}
 	\end{derivation}}
 	\only<3>{
 	因此我们得到：
 	\begin{formula}{金属中单位体积电子的速度分布}
-	\[n(u, v, w) = 2\left(\frac{m}{h}\right)^3\frac{dudvdw}{e^{\left[\frac{1}{2}m\left(u^2+v^2+w^2\right)-\mu\right]/kT}+1}\]
+	\[n(u, v, w) = 2\left(\frac{m}{h}\right)^3\frac{1}{e^{\left[\frac{1}{2}m\left(u^2+v^2+w^2\right)-\mu\right]/kT}+1}\]
 	\end{formula}}
 \end{frame}
 
 \subsection{阴极上的空间电荷限}
 
-\begin{frame}[label=current]
+\begin{frame}
 	\frametitle{Child-Langmuir 模型}
 	\framesubtitle{模型概述}
 	Child-Langmuir 模型是研究阴极上\alert{空间电荷限电流（Space-Charge Limited Current, SCLC）}的模型。
@@ -267,7 +267,7 @@
 	\end{physics}
 \end{frame}
 
-\begin{frame}[label=current]
+\begin{frame}
 	\frametitle{Child-Langmuir 模型}
 	\framesubtitle{稳态情形}
 	\only<1>{
@@ -313,7 +313,7 @@
 	在带有电子枪的电子器件中，人们定义\alert{导流系数$P=I/V^{3/2}$}来衡量电子枪的发射能力，$P$的单位为朴。一般微波器件的电子枪，导流系数在\SIrange[range-phrase = --]{0.1}{1}{\micro P}的范围。导流系数反映了阴极发射电流I与阴阳极间电压V之间的关系，它仅取决于枪的几何尺寸。}
 \end{frame}
 
-\begin{frame}[label=current]
+\begin{frame}
 	\frametitle{Child-Langmuir 模型}
 	\framesubtitle{非稳态情形}
 \end{frame}
@@ -322,12 +322,41 @@
 
 \begin{frame}
 	\frametitle{Richardson-Dushman 模型}
+	\only<1>{Richardson-Dushman 模型是用来研究金属表面热发射现象的模型。采用简并电子气的观点，金属表面附近的电子动能服从 FD 分布，若金属表面温度不为 \SI{0}{K}，则存在较高能态的电子，当其垂直金属表面方向的动能足够大，就有可能克服表面势垒逸出金属表面，形成热发射电流。
+	\begin{background}
+	1897 年 J. Thomson 发现电子后，O. Richardson 开始研究热电流现象。1901 年 O. Richardson 发表了他对金属丝上热电流的实验观测结果，发现金属丝上热电流的大小与金属丝的温度成指数关系；1923 年 S. Dushman 得到了热发射电流密度的现代形式，也即 Richardson-Dushman 公式。
+	\end{background}}
+	\only<2->{
+	阴极上的热发射电流密度可以利用 Drude-Sommerfeld 模型中的电子速度分布公式直接导出：
+	\begin{derivation}
+	
+	\end{derivation}}
 \end{frame}
 
 \subsection{光阴极的暗电流}
 
 \begin{frame}
-	\frametitle{Fowler–Nordheim 模型}
+	\frametitle{Fowler-Nordheim 模型}
+	\framesubtitle{模型概述}
+	\only<1>{
+	Fowler-Nordheim 模型是用来研究固体表面在高引出电场作用下的量子隧穿电流的模型。这种因固体表面高场强下量子隧穿效应而产生的电子发射被称为\alert{场致发射}；在光阴极领域，阴极表面场致发射产生的电流又被称为\alert{暗电流}。
+	\begin{background}
+	blabla
+	\end{background}}
+	\only<2->{
+	\begin{derivation}
+	考虑阴极表面附近的电子，假定阴极法向沿 $+x$ 方向，利用简并电子气的电子速度分布 $n(v_x, v_y, v_z)$，可写出场致发射电流密度为：
+	\[
+	J = \iiint\limits_{v_x \in [0, +\infty]}\zskip ev_xn(v_x, v_y, v_z)\cdot \Theta(v_x)dv_xdv_ydv_z
+	\]
+	其中 $\Theta(v_x)$ 为 $x$ 方向速度为 $v_x$ 的电子的隧穿概率。因此想计算场致发射电流密度，需计算 $\Theta(v_x)$。
+	\end{derivation}}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Fowler-Nordheim 模型}
+	\framesubtitle{隧穿概率}
+	我们采用 \alert{WKB 近似（WKB (Wigner, Kramers, Brillouin) approximation）}来推导量子隧穿概率。
 \end{frame}
 
 \subsection{光阴极的光电流}
@@ -335,11 +364,84 @@
 \begin{frame}
 	\frametitle{Fowler-Dubridge 模型}
 	\framesubtitle{单光子光电发射}
+	\only<1>{
+	Fowler-Dubridge 模型研究了光电发射过程中光电流的属性。
+	\begin{background}
+	1931 年 R. Fowler 研究了光电发射中光电流随入射光子能量变化曲线的拖尾现象。他采用简并电子气的观点，并假设：
+	\begin{itemize}
+	\item 吸收光子后电子的能量略高于克服表面势垒所需能量，因此\alert{忽略电子间散射作用}
+	\item 所有\alert{沿阴极法向的动能与吸收的光子能量之和}大于克服阴极表面势垒所需能量的电子都可从表面逃逸，这种电子叫做可出射电子
+	\item 光电流正比于可出射电子数
+	\end{itemize}
+	根据以上假设，R. Fowler 获得了光电发射电流 $I$ 的表达式，成功地揭示了拖尾现象的机理。1933 年 L. Dubridge 扩充了 Fowler 的理论，计算了光电发射中光电子的能谱，因此该理论被称为 Fowler-Dubridge 理论。
+	\end{background}
+	我们只演示 Fowler-Dubridge 模型中光电流公式的推导过程。}
+	\only<2-3>
+	{\begin{derivation}
+	\only<2>{
+	假定阴极表面法向沿 $+x$ 方向，利用简并电子气的速度分布公式，可以得到电子密度随 $v_x$ 的分布如下：
+	\[
+	n(v_x) = \frac{4\pi kT}{m}\left(\frac{m}{h}\right)^2\log\{1+e^{(\mu-\frac{1}{2}mv_x^2)/kT}\}
+	\]
+	根据 Fowler 的第二条假设，单位体积内所有可出射的电子数为：
+	\begin{eqnarray*}
+	&N &= \int_{\frac{1}{2}mv_x^2=\phi_w+\mu-h\nu}^{\infty}n(v_x)dv_x\\
+	&&= \frac{2\pi kT}{m}\left(\frac{2kT}{m}\right)^{1/2}\left(\frac{m}{h}\right)^3\int_0^{\infty}\frac{\log\{1+e^{-y+(h\nu-\phi_w)/kT}\}}{\{y+(\mu+\phi_w-h\nu)/kT\}^{1/2}}dy
+	\end{eqnarray*}}
+	\only<3>{
+	根据 Fowler 的第一条假设，上式积分分母中的 $y$ 相比于第二项可以忽略，所以上式可简化为：
+	\[
+	N = \frac{2\sqrt{2}\pi m^{3/2}}{h^3}\frac{(kT)^2}{(\mu+\phi_w-h\nu)^{1/2}}\int_0^{\infty}\log\{1+e^{-y+(h\nu-\phi_w)/kT}\}dy
+	\]
+	令 $F(x) = \int_0^{\infty}\log(1+e^{-y+x})dy$，则：
+	\[
+	N = \frac{2\sqrt{2}\pi m^{3/2}}{h^3}\frac{(kT)^2}{(\mu+\phi_w-h\nu)^{1/2}}F\left(\frac{h\nu-\phi_w}{kT}\right)
+	\]
+	根据 Fowler 的第三条假设，光电流 $I$ 正比于可出射电子数 $N$，我们就得到：
+	\[
+	I = CT^2F\left(\frac{h\nu-\phi_w}{kT}\right)
+	\]
+	}
+	\end{derivation}}
+	\only<4>{
+	\begin{formula}{单光子发射光电流}
+	\[
+	I = CT^2F\left(\frac{h\nu-\phi_w}{kT}\right)
+	\]
+	\scriptsize{
+	其中 $C$ 为常数，$T$ 为电子气温度，$F(x)$ 为 Fowler 函数，可以展成下面级数：
+	\[
+	F(x) =
+	\begin{cases}
+	e^x-\dfrac{e^{2x}}{2^2}+\dfrac{e^{3x}}{3^2}-\cdots & x \le 0\\[10pt]
+	\dfrac{\pi^2}{6}+\dfrac{x^2}{2}-\left[e^{-x}-\dfrac{e^{-2x}}{2^2}+\dfrac{e^{-3x}}{3^2}-\cdots\right] & x > 0
+	\end{cases}
+	\]}
+	\end{formula}
+	Fowler 函数的特征是在 $x < 0$ 时，其值随 $x$ 的减小而迅速衰减。这个特性意味着波段合适的激光可以作为阴极的发射开关，即光电发射具有良好的可控性。
+	}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Fowler-Dubridge 模型}
 	\framesubtitle{多光子光电发射}
+	\only<1>{
+	J. Bechtel 于 1973 年在他的博士论文里推广了 Fowler-Dubridge 模型，将多光子发射的情形包含进来，他得到：
+	\begin{formula}{多光子发射光电流密度}
+	\[
+	J_n = \alpha_nA\left(\frac{e}{h\nu}\right)^n(1-R)^n\cdot I^nT^2F\left(\frac{nh\nu-\phi_w}{kT}\right)
+	\]
+	\scriptsize{其中 $A$ 为 Richardson 常数 \SI{120}{A.cm^{-2}.K^{-2}}，$R$ 为阴极表面反射率，$I$ 为入射激光功率密度，$\alpha_n$ 是与 n-光子电离常数成正比的常数。}
+	\end{formula}
+	取 $n=0$，此时 $\alpha_0 = 1$，我们再次得到热发射电流密度公式；取 $n=1$，我们就得到单光子光电流密度公式。}
+	\only<2>{
+	于是总发射电流密度为：
+	\begin{formula}{总阴极发射电流密度}
+	\[
+	J = \sum_{i = 0}^{\infty}J_i
+	\]
+	\end{formula}
+	此公式包含了热发射电流，线性光电流和高阶光电流。}
 \end{frame}
 
 \subsection{光阴极的量子效率和初始发射度}
@@ -347,26 +449,107 @@
 \begin{frame}
 	\frametitle{Spicer-Dowell 模型}
 	\framesubtitle{三步模型}
+	\only<1>{
+	光电子发射的三步模型：
+	\begin{itemize}
+	\item 光子\alert{激发（Excitation）}阴极内电子
+	\item 电子\alert{输运（Transport）}到阴极表面
+	\item 电子\alert{逃逸（Escape）}到真空
+	\end{itemize}
+	\begin{background}
+	Fowler-Dubridge 模型仅仅考虑了阴极中电子在吸收光子后的运动状态，而未考虑光子吸收和电子输运的过程，因此无法用于计算光电子束较细致的参数，例如 QE 和发射度。1958 年 W. Spicer 开发了三步模型，考虑光子吸收和电子输运的过程，成功计算了 QE；2006 年 D. Dowell 利用三步模型，进行了简化并给出了 QE 和发射度的非常简洁的公式，并被实验所验证。
+	\end{background}}
+	\only<2>{
+	第一步：光子激发阴极内电子
+	\begin{derivation}
+	假设能量为 $h\nu$ 的光子垂直入射光滑金属阴极（沿 $-z$ 方向入射），由于光子被金属中电子吸收是一个泊松过程，因此光子被吸收的概率会随入射深度 $s$ 呈指数衰减，也即：
+	\[
+	p(\gamma: \mathrm{surface} \to s) = \frac{1}{\lambda_p}e^{-s/\lambda_p}
+	\]
+	其中 $p(\gamma: \mathrm{surface} \to s)$ 是进入阴极表面的光子在入射深度 $s$ 处被吸收的概率密度，$\lambda_p$ 是该能量光子在金属中的平均自由程。而能量为 $E$ 的电子吸收该光子，从而从能级 $E$ 跃迁到 $E+h\nu$ 的概率正比于能级 $E$ 的电子数与能级 $E+h\nu$ 的空位数的乘积：
+	\[
+	p(e^{-}: E\to E+h\nu) \propto f_{\mathrm{FD}}(E)g(E)\cdot f_{\mathrm{FD}}(E+h\nu)g(E+h\nu)
+	\]
+	其中 $f_{\mathrm{FD}}(E)$ 为 Fermi-Dirac 分布，$g(E)$ 是能级 $E$ 处的能态密度。
+	\end{derivation}}
+	\only<3>{
+	第二步：电子输运到阴极表面
+	\begin{derivation}
+	被激发到高能态 $E+h\nu$ 的电子开始输运过程。假设被激发的电子运动方向随机，并在 $4\pi$ 方向角均匀分布，再限定被激发的电子能量仅略高于有效逸出功，则电子输运到阴极表面的概率等于电子朝向阴极表面运动并输运过程中无散射的概率（一旦发生散射电子丢失能量，剩余能量不足以克服有效势垒），也即：
+	\[
+	p(e^{-}: (E+h\nu, s, \theta) \to \mathrm{surface}) = e^{-s/(\lambda_{e-e}(E+h\nu)\cos\theta)}
+	\]
+	其中 $\lambda_{e-e}(E+h\nu)$ 是能量为 $E+h\nu$ 电子的散射平均自由程，$\theta$ 为电子运动方向与阴极表面法向（$+z$）的夹角。
+	\end{derivation}}
+	\only<4>{
+	第三步：电子逃逸到真空
+	\begin{derivation}
+	能量为 $E+h\nu$ 的电子以 $\theta$ 角传输至阴极表面时会尝试克服表面势垒而逃逸。假设所有 $+z$ 方向动能大于等于有效势垒高度（有效逸出功与 Fermi 能量之和）的电子都可以逃逸，可得逃逸概率为：
+	\[
+	p(e^{-}: \mathrm{escape}) = u[(E+h\nu)\cos^2\theta-\mu-\phi_{\mathrm{eff}}]
+	\]
+	其中 $u(x)$ 为阶跃函数：$x\ge 0$ 时 $u(x)=1$；$x<0$ 时 $u(x)=0$，$\mu$ 为 Fermi 能量。
+	\end{derivation}}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Spicer-Dowell 模型}
 	\framesubtitle{Schottky 效应和有效逸出功}
+	\only<1>{
+	\begin{concept}
+	电子在逃逸出金属阴极表面时要克服表面势垒（真空势垒和镜像电荷势的总和）的作用；阴极表面的高引出场强会降低表面势垒的高度，从而降低电子所感受到的逸出功，这种效应叫做 \alert{Schottky 效应}，电子所感受的逸出功叫做\alert{有效逸出功}。
+	\end{concept}}
+	\only<2>{
+	\begin{derivation}
+	对于单个电子而言，在金属阴极表面距离 $x$ 的位置，其电势能为：
+	\[
+	\Phi = \phi_{\mathrm{w}} - \frac{e^2}{16\pi\varepsilon_0x} - eE_0x
+	\]
+	其中 $\phi_{\mathrm{w}}$ 为金属的逸出功，$-e^2/16\pi\varepsilon_0x$ 是镜像电荷势能，$- eE_0x$ 是引出场势能。
+	容易看出总势能在距离 $x$ 满足：
+	\[
+	x = \sqrt{\frac{e}{16\pi\varepsilon_0E_0}}
+	\]
+	时取得最大值，最大值即为有效逸出功：
+	\end{derivation}
+	\begin{formula}{考虑了 Schottky 效应的有效逸出功}
+	\[
+	\phi_{\mathrm{eff}} = \phi_{\mathrm{w}} - e\sqrt{\frac{eE_0}{4\pi\varepsilon_0}}
+	\]
+	\end{formula}}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Spicer-Dowell 模型}
 	\framesubtitle{光阴极的量子效率}
+	利用三步模型，可以得到光阴极的量子效率：
+	\begin{formula}{光阴极的量子效率}
+	\[
+	\mathrm{QE}(\omega) \approx\dfrac{1-R(\omega)}{1+\dfrac{\lambda_{\mathrm{opt}}}{\bar{\lambda}_{e-e}(\omega)}}\frac{(\hbar\omega-\phi_{\mathrm{eff}})^2}{8\phi_{\mathrm{eff}}(E_F+\phi_{\mathrm{eff}})}
+	\]
+	\end{formula}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Spicer-Dowell 模型}
 	\framesubtitle{光阴极的初始发射度}
+	利用三步模型，可以得到光阴极的初始发射度：
+	\begin{formula}{光阴极的初始发射度}
+	\[
+	\varepsilon_{n} =\sigma\sqrt{\dfrac{\hbar\omega-\phi_{\mathrm{eff}}}{3mc^2}}
+	\]
+	\end{formula}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Spicer-Dowell 模型}
 	\framesubtitle{光阴极的折射定律}
+	利用三步模型，可以得到光阴极的折射定律：
+	\begin{formula}{光阴极表面的折射定律}
+	\[
+	\frac{\sin\theta_\mathrm{out}}{\sin\theta_\mathrm{in}}=\sqrt{\frac{E+h\nu}{E+h\nu-\mu-\phi_\mathrm{eff}}}
+	\]
+	\end{formula}
 \end{frame}
 
 \subsection{几个量子模型}
@@ -400,6 +583,7 @@
 \begin{frame}
 	\frametitle{金属光阴极}
 	\framesubtitle{Cu, Mg, Ag}
+	
 \end{frame}
 
 \begin{frame}
