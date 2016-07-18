@@ -5,7 +5,7 @@
 %\documentclass[a4paper]{article}
 %\usepackage{beamerarticle}
 \usepackage{thucourse}
-\includeonlyframes{current}
+%\includeonlyframes{current}
 
 \title{光阴极物理}
 \subtitle{高亮度电子束物理及应用}
@@ -532,7 +532,7 @@
 
 \subsection{光阴极的量子效率和初始发射度}
 
-\begin{frame}[label=current]
+\begin{frame}
 	\frametitle{Spicer-Dowell 模型}
 	\framesubtitle{三步模型}
 	\only<1>{
@@ -554,7 +554,7 @@
 	\]
 	其中 $p(\gamma: \mathrm{surface} \to s)$ 是进入阴极表面的光子在入射深度 $s$ 处被吸收的概率密度，$\lambda_p$ 是该能量光子在金属中的平均自由程。而能量为 $E$ 的电子吸收该光子，从而从能级 $E$ 跃迁到 $E+h\nu$ 的概率正比于能级 $E$ 的电子数与能级 $E+h\nu$ 的空位数的乘积：
 	\[
-	p(e^{-}: E\to E+h\nu) \propto f_{\mathrm{FD}}(E)g(E)\cdot f_{\mathrm{FD}}(E+h\nu)g(E+h\nu)
+	p(e^{-}: E\to E+h\nu) \propto f_{\mathrm{FD}}(E)g(E)\cdot [1-f_{\mathrm{FD}}(E+h\nu)]g(E+h\nu)
 	\]
 	其中 $f_{\mathrm{FD}}(E)$ 为 Fermi-Dirac 分布，$g(E)$ 是能级 $E$ 处的能态密度。
 	\end{derivation}}
@@ -605,7 +605,7 @@
 	\end{formula}}
 \end{frame}
 
-\begin{frame}[label=current]
+\begin{frame}
 	\frametitle{Spicer-Dowell 模型}
 	\framesubtitle{光阴极的量子效率}
 	利用三步模型，可以计算光阴极的量子效率。
@@ -619,7 +619,7 @@
 	\end{formula}
 \end{frame}
 
-\begin{frame}[label=current]
+\begin{frame}
 	\frametitle{Spicer-Dowell 模型}
 	\framesubtitle{光阴极的初始发射度}
 	利用三步模型，可以得到光阴极的初始发射度：
@@ -630,7 +630,7 @@
 	\end{formula}
 \end{frame}
 
-\begin{frame}[label=current]
+\begin{frame}
 	\frametitle{Spicer-Dowell 模型}
 	\framesubtitle{光阴极的折射定律}
 	利用三步模型，可以得到光阴极的折射定律：
@@ -669,39 +669,98 @@
 
 \subsection{传统光阴极}
 
-\begin{frame}
+\begin{frame}[label=current]
 	\frametitle{金属光阴极}
-	\framesubtitle{Cu, Mg, Ag}
+	金属是常见的光阴极材料，其中 Cu 阴极和 Mg 阴极最为常用，LCLS 的光阴极注入器中使用的阴极就是 Cu 阴极。\\[10pt]
 	
+	金属阴极的特点如下：
+	\begin{itemize}
+	\item 量子效率 QE 较低，一般在 \SIrange[range-phrase = $\sim$]{1e-4}{1e-5}{}
+	\alert{\item 飞秒（fs）级响应时间，可用于产生超短电子束团}
+%	\item 归一化发射度通常在 \SIrange[range-phrase = $\sim$]{0.4}{1.0}{\milli m\cdot\milli rad/\milli m} 之间
+	\item 对工作环境真空度要求低，一般 \SI{1e-8}{Torr} 即可工作
+	\item 逸出功通常在 \SIrange[range-phrase = $\sim$]{3.5}{5}{eV} 范围，因此只能采用紫外（UV）激光（常用绿光倍频 \SI{266}{\nano m}）照射产生光电子
+%	\item 性质稳定，可以在大气环境下短暂存放，方便加工与运输
+%	\item 工作寿命长，大都在 \SI{1000}{h} 以上
+	\end{itemize}
 \end{frame}
 
-\begin{frame}
+\begin{frame}[label=current]
 	\frametitle{半导体光阴极}
 	\framesubtitle{PEA 光阴极}
+	半导体光阴极也是近年来使用较广的阴极，按照半导体的电子亲和势可分为正电子亲和势（PEA）阴极及负电子亲和势（NEA）阴极。常见的 PEA 阴极主要是碱金属锑化物及碱金属碲化物，如 $\sf Cs_2Te,Cs_3Sb,K_3Sb,Na_3Sb,Li_3Sb$，近年来多碱金属锑化物阴极也逐渐流行起来，例如 $\sf Na_2KSb,K_2CsSb$ 等。FLASH 所使用的光阴极就是 $\sf Cs_2Te$ 阴极。\\[10pt]
+	
+	PEA 光阴极的特点如下：
+	\begin{itemize}
+	\item 量子效率 QE 较高，一般大于 5\%
+	\item 皮秒（ps）级响应时间
+	\item 对工作环境真空度要求相对较低，\SI{1e-9}{Torr} 即可工作
+	\item 需要紫外（UV）激光驱动
+	\end{itemize}
 \end{frame}
 
-\begin{frame}
+\begin{frame}[label=current]
 	\frametitle{半导体光阴极}
 	\framesubtitle{NEA 光阴极}
+	常见的 NEA 阴极主要是砷化镓 $\sf GaAs$ 及氮化镓 $\sf GaN$ 阴极，JLab 的能量回收加速器 ERL 中使用的就是 $\sf GaAs$ 阴极。\\[10pt]
+	
+	NEA 光阴极的特点如下：
+	\begin{itemize}
+	\alert{\item 量子效率 QE 很高，可达 10\%}
+	\item 响应时间很长，一般在几十皮秒（ps）量级
+	\item 对工作环境真空度要求很高，低于 \SI{1e-10}{Torr} 的真空度下才可以正常工作，且需要低温环境
+	\item 近红外（NIR）激光即可驱动
+	\alert{\item 可产生极化电子束}
+	\end{itemize}
 \end{frame}
 
 \subsection{几种新型光阴极}
 
-\begin{frame}
+\begin{frame}[label=current]
 	\frametitle{表面等离激元光阴极}
-	\framesubtitle{NPC}
+	\framesubtitle{表面等离激元}
+	Maxwell 电磁理论预言在两种介电常数实部反号的介质的交界面存在一种沿交界面传播的电磁-电荷密度振荡波，也称做\alert{表面等离激元（Surface Plasmon Polaritons, SPPs）}。利用经典的 Drude 模型可导出金属的介电常数实部为负，因此金属与介质交界面可以存在 SPPs。\\[10pt]
+	
+	表面等离激元具有下面特点：
+	\begin{itemize}
+	\item 入射光必须设法增加横向动量才能激发 SPPs
+	\item SPPs 存在一个特征频率，等离子体频率低于此特征频率的金属表面才能支持 SPPs
+	\item SPPs 沿交界面传播，垂直于交界面衰减
+	\item 特定波长和角度入射的光可被 SPPs \alert{完全共振吸收}，此时交界面处会形成\alert{极高电场}
+	\end{itemize}
 \end{frame}
 
-\begin{frame}
+\begin{frame}[label=current]
 	\frametitle{表面等离激元光阴极}
-	\framesubtitle{ATR}
+	\framesubtitle{NPC 光阴极}
+	表面等离激元光阴极就是利用特定激光驱动下金属和空气/真空交界面上存在的表面等离激元，对激光吸收和电子发射进行增强的光阴极。\\[10pt]
+	
+	NPC 光阴极具有下面特点：
+	\begin{itemize}
+	\item 沿交界面传播，垂直于交界面衰减
+	\item 特定波长和角度入射的光可被 SPPs 完全共振吸收，此时发射率为 0
+	\item 共振吸收时，交界面处会形成极高电场
+	\end{itemize}
 \end{frame}
 
-\begin{frame}
+\begin{frame}[label=current]
+	\frametitle{表面等离激元光阴极}
+	\framesubtitle{ATR 光阴极}
+	表面等离激元光阴极就是利用特定激光驱动下金属和空气/真空交界面上存在的表面等离激元，对激光吸收和电子发射进行增强的光阴极。\\[10pt]
+	
+	ATR 光阴极具有下面特点：
+	\begin{itemize}
+	\item 沿交界面传播，垂直于交界面衰减
+	\item 特定波长和角度入射的光可被 SPPs 完全共振吸收，此时发射率为 0
+	\item 共振吸收时，交界面处会形成极高电场
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[label=current]
 	\frametitle{冷阴极}
 \end{frame}
 
-\begin{frame}
+\begin{frame}[label=current]
 	\frametitle{复合阴极}
 \end{frame}
 
