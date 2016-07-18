@@ -5,7 +5,7 @@
 %\documentclass[a4paper]{article}
 %\usepackage{beamerarticle}
 \usepackage{thucourse}
-%\includeonlyframes{current}
+\includeonlyframes{current}
 
 \title{光阴极物理}
 \subtitle{高亮度电子束物理及应用}
@@ -23,7 +23,7 @@
   \frametitle{目录}
   \begin{multicols}{2}
   \tableofcontents
-	\end{multicols}
+  \end{multicols}
 \end{frame}
 
 \section{光电效应}
@@ -76,11 +76,11 @@
 	\only<2>{
   \begin{itemize}
 	  \item 光电子数目（光电子产额）与入射光强度成正比，因此又被称为线性光电效应，可以定义光阴极的量子效率 QE 如下：
-	  \begin{formula}{量子效率定义}
+	  \begin{formula}{量子效率 QE}
 	  \[
-	  QE = \frac{N_e}{N_p} = \frac{Q/e}{IS\tau/h\nu} = \frac{Q}{I}\cdot\frac{h\nu}{eS\tau}
+	  QE = \frac{N_e}{N_p} = \frac{Q/e}{IS\tau/h\nu} = \frac{J}{I}\cdot\frac{h\nu}{e}
 	  \]
-	  \scriptsize{其中$N_e$为出射光电子数，$N_p$为入射光子数，$Q$是出射束团电荷量，$I$是入射光强度，$h\nu$为入射光子能量，$e$为电子电荷量，$S$为入射光横向面积，$\tau$为入射光脉宽}
+	  \scriptsize{其中$N_e$为出射光电子数，$N_p$为入射光子数，$Q$是出射束团电荷量，$J$是出射电流密度，$I$是入射光功率密度，$h\nu$为入射光子能量，$e$为电子电荷量，$S$为入射光横向面积，$\tau$为入射光脉宽}
 	  \end{formula}
 	  \item 入射光子能量必须高于金属的逸出功才可以发生单光子光电效应
   \end{itemize}}
@@ -140,43 +140,44 @@
 	\end{concept}
 	\only<1>{
 	\begin{physics}
-		当金属表面存在很强的引出电场（即电场线指向金属表面的电场）时，金属表面势垒会被电场拉低，从而金属表面的电子可以通过\alert{量子隧穿}效应穿越表面势垒，逸出金属表面。
+	当金属表面存在很强的引出电场（即电场线指向金属表面的电场）时，金属表面势垒会在电场的影响下变成准三角形，其厚度变小，从而金属表面的电子可以通过\alert{量子隧穿}效应穿越表面势垒，逸出金属表面。
 	\end{physics}
 	\begin{formula}{场致发射电流密度}
 	\[
 	J = \frac{A\beta^2 E^2}{\phi}\exp\left(-\frac{B\phi^{3/2}}{\beta E}\right)
 	\]
-	\scriptsize{其中 $E$ 是电场强度，$\beta$ 为场增强因子，$A, B$ 为与金属表面情况有关的参数，可通过实验拟合得到}
+	\scriptsize{其中 $E$ 是电场强度，$\beta$ 为场增强因子，$A, B$ 是与金属表面情况有关的参数，可通过实验拟合得到}
 	\end{formula}}
 	\only<2>{
   \begin{itemize}
-	  \item 场致发射是光电发射的特例，电子吸收 0 个光子而逸出金属表面，即 0 阶光电发射，电子逃逸是通过量子隧穿完成的
-	  \item 金属温度 $T = 0$ 时，依然有场致发射电流 $J > 0$
-		\item 场致发射电流随引出电场的梯度下降而迅速减小，$E = 0$ 时场致发射电流 $J = 0$
+	\item 场致发射是光电发射的特例，电子吸收 0 个光子而逸出金属表面，即 0 阶光电发射，电子逃逸是通过量子隧穿完成的
+	\item 金属温度 $T = \SI{0}{K}$ 时，依然有场致发射电流 $J > 0$
+	\item 场致发射电流对金属温度 $T$ 的变化不敏感
+	\item 场致发射电流随引出电场的梯度下降而迅速减小，$E = 0$ 时场致发射电流 $J = 0$
   \end{itemize}}
 \end{frame}
 
-\subsection{体光电效应与表面光电效应}
-
-\begin{frame}
-	\frametitle{体光电效应}
-\end{frame}
-
-\begin{frame}
-	\frametitle{表面光电效应}
-\end{frame}
+%\subsection{体光电效应与表面光电效应}
+%
+%\begin{frame}
+%	\frametitle{体光电效应}
+%\end{frame}
+%
+%\begin{frame}
+%	\frametitle{表面光电效应}
+%\end{frame}
 
 \section{光阴极电子发射物理模型}
 
-\subsection{光阴极电子发射模型简述}
-
-\begin{frame}
-	\frametitle{模型演化}
-\end{frame}
-
-\begin{frame}
-	\frametitle{唯象理论与量子理论}
-\end{frame}
+%\subsection{光阴极电子发射模型简述}
+%
+%\begin{frame}
+%	\frametitle{模型演化}
+%\end{frame}
+%
+%\begin{frame}
+%	\frametitle{唯象理论与量子理论}
+%\end{frame}
 
 \subsection{金属中的自由电子}
 
@@ -310,27 +311,54 @@
 	\end{formula}
 	注意上式我们是在平行电极板情形下推导得到的，但是该公式对于圆柱电极板情形也成立，大家可以自己推导一下作为练习。
 	\\~\\
-	在带有电子枪的电子器件中，人们定义\alert{导流系数$P=I/V^{3/2}$}来衡量电子枪的发射能力，$P$的单位为朴。一般微波器件的电子枪，导流系数在\SIrange[range-phrase = --]{0.1}{1}{\micro P}的范围。导流系数反映了阴极发射电流I与阴阳极间电压V之间的关系，它仅取决于枪的几何尺寸。}
+	在带有电子枪的电子器件中，人们定义\alert{导流系数 $P=I/V^{3/2}$} 来衡量电子枪的发射能力，$P$ 的单位为朴。一般微波器件的电子枪，导流系数在 \SIrange[range-phrase = --]{0.1}{1}{\micro P} 的范围。导流系数反映了阴极发射电流I与阴阳极间电压V之间的关系，它仅取决于枪的几何尺寸。}
 \end{frame}
 
-\begin{frame}
-	\frametitle{Child-Langmuir 模型}
-	\framesubtitle{非稳态情形}
-\end{frame}
+%\begin{frame}
+%	\frametitle{Child-Langmuir 模型}
+%	\framesubtitle{非稳态情形}
+%\end{frame}
 
 \subsection{光阴极的热发射电流}
 
 \begin{frame}
 	\frametitle{Richardson-Dushman 模型}
-	\only<1>{Richardson-Dushman 模型是用来研究金属表面热发射现象的模型。采用简并电子气的观点，金属表面附近的电子动能服从 FD 分布，若金属表面温度不为 \SI{0}{K}，则存在较高能态的电子，当其垂直金属表面方向的动能足够大，就有可能克服表面势垒逸出金属表面，形成热发射电流。
+	\framesubtitle{模型概述}
+	Richardson-Dushman 模型是用来研究金属表面热发射现象的模型。采用简并电子气的观点，金属表面附近的电子动能服从 FD 分布，若金属表面温度不为 \SI{0}{K}，则存在较高能态的电子，当其垂直金属表面方向的动能足够大，就有可能克服表面势垒逸出金属表面，形成热发射电流。
 	\begin{background}
 	1897 年 J. Thomson 发现电子后，O. Richardson 开始研究热电流现象。1901 年 O. Richardson 发表了他对金属丝上热电流的实验观测结果，发现金属丝上热电流的大小与金属丝的温度成指数关系；1923 年 S. Dushman 得到了热发射电流密度的现代形式，也即 Richardson-Dushman 公式。
-	\end{background}}
-	\only<2->{
-	阴极上的热发射电流密度可以利用 Drude-Sommerfeld 模型中的电子速度分布公式直接导出：
+	\end{background}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Richardson-Dushman 模型}
+	\framesubtitle{热发射电流密度}
+	\only<1-2>{
+	\only<1>{
+	阴极上的热发射电流密度可以利用 Drude-Sommerfeld 模型中的电子速度分布公式做近似直接导出。}
 	\begin{derivation}
-	
+	\only<1>{
+	金属表面的电子速度分布遵守：
+	\[n(v_x, v_y, v_z) = 2\left(\frac{m}{h}\right)^3\frac{1}{e^{(E-E_F)/kT}+1}\]
+	由于只有动能 $E$ 远高于费米能级 $E_F$ 的电子才能克服金属表面势垒 $U$ 逸出，我们统计热电流时可将 Fermi-Dirac 分布近似为 Maxwell-Boltzmann 分布：
+	\[\frac{1}{e^{(E-E_F)/kT}+1} \rightarrow e^{-(E-E_F)/kT}\]}
+	\only<2>{
+	假定阴极法向沿 $+x$ 方向，那么热发射电流密度 $J$ 可写成：
+	\[J = \iiint\limits_{mv_x^2/2 > U}\zskip ev_xn(v_x, v_y, v_z)dv_xdv_ydv_z\]
+	将近似后的电子速度分布公式代入，利用高斯积分：
+	\[\int_{-\infty}^{\infty}e^{-\alpha z^2}dz=\sqrt{\frac{\pi}{\alpha}}\]
+	可以得到：
+	\[J = \frac{4\pi emk^2}{h^3}T^2\exp\left(\frac{E_F-U}{kT}\right)\]}
 	\end{derivation}}
+	\only<3>{
+	由此我们得到热发射电流密度公式：
+	\begin{formula}{Richardson-Dushman 公式}
+	\[
+	J = AT^2\exp\left(-\frac{\phi}{kT}\right)
+	\]
+	\scriptsize{其中 $A=4\pi emk^2/h^3\approx \SI{1202}{\micro A.\milli m^{-2}.K^{-2}}$，称为Richardson常数；$\phi=U-E_F$，定义为金属的逸出功}
+	\end{formula}
+	Richardson-Dushman 公式最早被用于实验测量钨和其他金属的逸出功，这也是测量逸出功最古老的方法。现代一般采用更精确的光电发射的方法来测量逸出功。}
 \end{frame}
 
 \subsection{光阴极的暗电流}
@@ -338,25 +366,83 @@
 \begin{frame}
 	\frametitle{Fowler-Nordheim 模型}
 	\framesubtitle{模型概述}
-	\only<1>{
-	Fowler-Nordheim 模型是用来研究固体表面在高引出电场作用下的量子隧穿电流的模型。这种因固体表面高场强下量子隧穿效应而产生的电子发射被称为\alert{场致发射}；在光阴极领域，阴极表面场致发射产生的电流又被称为\alert{暗电流}。
+	Fowler-Nordheim 模型是用来研究固体表面在高引出电场作用下的量子隧穿（即场致发射）电流的模型。
 	\begin{background}
-	blabla
-	\end{background}}
-	\only<2->{
-	\begin{derivation}
-	考虑阴极表面附近的电子，假定阴极法向沿 $+x$ 方向，利用简并电子气的电子速度分布 $n(v_x, v_y, v_z)$，可写出场致发射电流密度为：
-	\[
-	J = \iiint\limits_{v_x \in [0, +\infty]}\zskip ev_xn(v_x, v_y, v_z)\cdot \Theta(v_x)dv_xdv_ydv_z
-	\]
-	其中 $\Theta(v_x)$ 为 $x$ 方向速度为 $v_x$ 的电子的隧穿概率。因此想计算场致发射电流密度，需计算 $\Theta(v_x)$。
-	\end{derivation}}
+%	场致发射现象最早可能是 J. Winkler 于 1744 年在研究金属丝阴极时发现：他发现金属丝阴极会自行放电。
+	1897 年 J. Thomson 发现电子后，热发射和光电发射现象先后被发现，人们开始理解能量足够克服金属表面的势垒的电子可以从金属内部发射出来。1913 年，物理学家们开始怀疑金属表面的电子发射中有除了热发射和光电发射现象之外的新的物理现象存在---也就是场致发射现象。1922 年 J. Lilienfeld 发表了第一篇明确地阐述场致发射现象的实验文章。同年，R. Millikan 等人开始对该现象感兴趣并做了实验研究，他们首先画出 $i-V$ 图并试图用直线拟合，然而这种尝试并不成功；随后人们尝试了 $\log(i)-V$ 图及 $\log(i)-V^{1/2}$ 图，依然没有得到线性关系。首次突破在 1928 年出现，C. Lauritsen 发现场致发射的 $\log(i)-1/V$ 图是线性的，J. Oppenheimer 提出了这种发射来源于量子隧穿的观点，随后 R. Fowler 和 L. Nordheim 给出了场致发射电流的解析公式，这就是著名的 Fowler-Nordheim 公式。
+	\end{background}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Fowler-Nordheim 模型}
 	\framesubtitle{隧穿概率}
-	我们采用 \alert{WKB 近似（WKB (Wigner, Kramers, Brillouin) approximation）}来推导量子隧穿概率。
+	\only<1>{
+	在光阴极领域，阴极表面场致发射产生的电流又被称为\alert{暗电流}。我们下面就尝试推导暗电流密度的解析公式。
+	\begin{derivation}
+	考虑阴极表面附近的电子，假定阴极法向沿 $+x$ 方向，利用简并电子气的电子速度分布 $n(v_x, v_y, v_z)$，可写出场致发射电流密度为：
+	\[
+	J = \iiint\limits_{v_x \in [0, +\infty]}\zskip ev_xn(v_x, v_y, v_z)\cdot \Theta(v_x)dv_xdv_ydv_z
+	\]
+	其中 $\Theta(v_x)$ 为 $x$ 方向速度为 $v_x$ 的电子的隧穿概率。
+	\end{derivation}
+	因此想计算场致发射电流密度，需计算电子隧穿概率 $\Theta(v_x)$。}
+	\only<2>{我们采用 \alert{WKB 近似（WKB (Wigner, Kramers, Brillouin) approximation）}来计算量子隧穿概率。}
+	\only<2-4>{
+	\begin{derivation}
+	\only<2>{
+	假定阴极法向沿 $+x$ 方向，我们计算阴极表面势垒分布为 $V(x)$ 情形下的电子波函数，从而得到隧穿概率。设此时电子波函数为 $\Phi(x)$，利用一维含时 Schr\"odinger 方程，我们有：
+	\[\frac{d^2\Psi}{dx^2}=\frac{2m(V-E_x)}{\hbar^2}\Psi\]
+	其中 $E_x$ 为电子在 $x$ 方向的动能。考虑在 $[x, x+dx]$ 一段的势垒 V，我们近似认为其为常数，那么可解出波函数 $\Phi$ 在此区间满足：
+	\[\Phi(x+dx)=\Phi(x)\exp\left(-\frac{\sqrt{2m[V(x)-E_x]}}{\hbar}dx\right)\]}
+	\only<3>{
+	于是 $\Psi$ 在整个 $x$ 正半轴上的可写为：
+	\[\Phi(x)=\Phi(0)\exp\left(-\int_0^x\frac{\sqrt{2m[V(s)-E_x]}}{\hbar}ds\right)\]
+	上面的公式就称为 \alert{WKB 近似}。有了波函数，我们便可以计算特定形状势垒下的隧穿概率：
+	\[\Theta(E_x)=\frac{\Psi(L)\Psi^*(L)}{\Psi(0)\Psi^*(0)}=\exp\left(-\frac{2\sqrt{2m}}{\hbar}\int_0^L\zskip\sqrt{V(s)-E_x}ds\right)\]
+	式中 $L$ 为势垒宽度，也即相对（能量 $E_x$ 的）势垒高度刚好等于 0 的位置。下面以外场为恒定电场且不考虑空间电荷力时的三角（ET，Exact Triangular）势垒为例计算隧穿概率。}
+	\only<4>{
+	假定外场梯度为 $F$，那么 $V(x)-E_x=\phi-eFx$，其中 $\phi$ 为相对电子 $x$ 方向动能 $E_x$ 的势垒高度，此时势垒宽度 $L=\phi/eF$。代入 $\Theta$ 的计算公式，就得到：}
+	\end{derivation}}
+	\only<4>{
+	\begin{formula}{ET 势垒的隧穿概率}
+	\[\Theta(E_x)=\exp\left(-\frac{4\sqrt{2m}}{3e\hbar}\frac{\phi(E_x)^{3/2}}{F}\right)\]
+	\scriptsize{
+	其中 $\phi(E_x)=\phi_w+E_F-E_x$，是相对于 $x$ 方向动能为 $E_x$ 的电子的金属表面势垒高度}
+	\end{formula}
+	有了隧穿概率，我们可以代回到场致发射电流密度公式中，计算暗电流密度。}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Fowler-Nordheim 模型}
+	\framesubtitle{暗电流密度}
+	\only<1-2>{
+	\begin{derivation}
+	\only<1>{
+	容易将场致发射电流密度公式化为下面形式：
+	\[J = A\cdot\frac{T}{k}\int_0^{\infty} dE_x\Theta(E_x)\ln\left(e^{-\frac{E_x-E_F}{kT}}+1\right)\]
+	其中 $A$ 为 Richardson 常数。考虑到场致发射电子大部分能量在 Fermi 能级附近，我们可以将一般形式的 $\Theta(E_x)$ 在 $E_F$ 附近做 Taylor 展开到二阶，有：
+	\[\Theta(E_x)=\Theta(E_F)\cdot e^{\left(\frac{2\sqrt{2m}}{\hbar}(E_x-E_F)\int\limits_0^L\frac{ds}{\sqrt{V(s)-E_F}}\right)}\]
+	将上式代入 $J$ 的表达式，考虑到场致发射电流主要由 $E_x$ 在 Fermi 能级附近的电子贡献，可以将 $J$ 中的积分区间扩充至 $(-\infty, \infty)$。}
+	\only<2>{
+	通过变量代换及积分公式：
+	\[\int_0^{\infty}du u^{-\alpha-1}\ln(u+1)=\frac{\pi}{\alpha\sin(\alpha\pi)},\quad\mathrm{Re}(\alpha)\in(0, 1)\]
+	可得到：
+	\[J = AT^2\frac{\Theta(E_F)}{C^2\mathrm{Sa}(C\pi)}\]
+	其中 $C$ 满足：
+	\[C = kT\frac{\sqrt{2m}}{\hbar}\int_0^L\frac{ds}{\sqrt{V(s)-E_F}}\]
+	代入 ET 势垒的隧穿概率的相关计算结果，最终我们有：}
+	\end{derivation}}
+	\only<3>{
+	\begin{formula}{场致发射电流密度}
+	\[J=\frac{AF^2}{\phi_w}\exp\left(-\frac{B\phi_w^{3/2}}{F}\right)\frac{1}{\mathrm{Sa}(CT\phi_w^{1/2}/F)}\]
+	\scriptsize{其中 $A=e^3/8\pi h$，$B=4\sqrt{2m}/3e\hbar$，$C=2\pi k\sqrt{2m}/e\hbar$}
+%	\scriptsize{其中 $A=e^3/8\pi h\approx\SI{1.541434e-6}{A.eV.V^{-2}}$，$B=4\sqrt{2m}/3e\hbar\approx\SI{6.830890}{eV^{-3/2}.V.\nano m^{-1}}$，$C=2\pi k\sqrt{2m}/e\hbar\approx\SI{2.773902}{K^{-1}.eV^{-1/2}.V.\micro m^{-1}}$
+	\end{formula}
+	当温度 $T\rightarrow \SI{0}{K}$ 时，$\mathrm{Sa}$ 函数趋近于 1，由此：
+	\begin{formula}{Fowler-Nordheim 公式}
+	\[J=\frac{AF^2}{\phi_w}\exp\left(-\frac{B\phi_w^{3/2}}{F}\right)\]
+	\scriptsize{其中 $A=e^3/8\pi h\approx\SI{1.541e-6}{A.eV.V^{-2}}$，$B=4\sqrt{2m}/3e\hbar\approx\SI{6.831}{eV^{-3/2}.V.\nano m^{-1}}$，$F$ 是金属表面场梯度}
+	\end{formula}}
 \end{frame}
 
 \subsection{光阴极的光电流}
@@ -446,7 +532,7 @@
 
 \subsection{光阴极的量子效率和初始发射度}
 
-\begin{frame}
+\begin{frame}[label=current]
 	\frametitle{Spicer-Dowell 模型}
 	\framesubtitle{三步模型}
 	\only<1>{
@@ -519,10 +605,13 @@
 	\end{formula}}
 \end{frame}
 
-\begin{frame}
+\begin{frame}[label=current]
 	\frametitle{Spicer-Dowell 模型}
 	\framesubtitle{光阴极的量子效率}
-	利用三步模型，可以得到光阴极的量子效率：
+	利用三步模型，可以计算光阴极的量子效率。
+	\begin{derivation}
+	\[QE = (1-R)\frac{\int_{E_F+\phi_{\mathrm{eff}}}dE\cdot N(E+h\nu)}{123}\]
+	\end{derivation}
 	\begin{formula}{光阴极的量子效率}
 	\[
 	\mathrm{QE}(\omega) \approx\dfrac{1-R(\omega)}{1+\dfrac{\lambda_{\mathrm{opt}}}{\bar{\lambda}_{e-e}(\omega)}}\frac{(\hbar\omega-\phi_{\mathrm{eff}})^2}{8\phi_{\mathrm{eff}}(E_F+\phi_{\mathrm{eff}})}
@@ -530,7 +619,7 @@
 	\end{formula}
 \end{frame}
 
-\begin{frame}
+\begin{frame}[label=current]
 	\frametitle{Spicer-Dowell 模型}
 	\framesubtitle{光阴极的初始发射度}
 	利用三步模型，可以得到光阴极的初始发射度：
@@ -541,7 +630,7 @@
 	\end{formula}
 \end{frame}
 
-\begin{frame}
+\begin{frame}[label=current]
 	\frametitle{Spicer-Dowell 模型}
 	\framesubtitle{光阴极的折射定律}
 	利用三步模型，可以得到光阴极的折射定律：
@@ -552,29 +641,29 @@
 	\end{formula}
 \end{frame}
 
-\subsection{几个量子模型}
-
-\begin{frame}
-	\frametitle{Kantorovich-Keldysh 模型}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Wan 模型}
-\end{frame}
-
-\subsection{粗糙表面光阴极上的电子发射}
-
-\begin{frame}
-	\frametitle{2D 正弦表面模型}
-\end{frame}
-
-\begin{frame}
-	\frametitle{\* 3D 任意表面模型}
-\end{frame}
-
-\begin{frame}
-	\frametitle{\* 纳米精细度模型}
-\end{frame}
+%\subsection{几个量子模型}
+%
+%\begin{frame}
+%	\frametitle{Kantorovich-Keldysh 模型}
+%\end{frame}
+%
+%\begin{frame}
+%	\frametitle{Wan 模型}
+%\end{frame}
+%
+%\subsection{粗糙表面光阴极上的电子发射}
+%
+%\begin{frame}
+%	\frametitle{2D 正弦表面模型}
+%\end{frame}
+%
+%\begin{frame}
+%	\frametitle{* 3D 任意表面模型}
+%\end{frame}
+%
+%\begin{frame}
+%	\frametitle{* 纳米精细度模型} 
+%\end{frame}
 
 \section{几种典型的光阴极}
 
