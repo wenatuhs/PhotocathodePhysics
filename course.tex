@@ -30,14 +30,17 @@
 
 \subsection{光电效应基础知识}
 
-\begin{frame}
+\begin{frame}[label=current]
   \frametitle{光电效应的基本概念}
   \begin{concept}
   	\alert{光电效应}是指光束照射在金属表面会使其发射电子的物理现象，发射出的电子被称为\alert{光电子}。
 	\end{concept}
-%	\begin{center}
-%		\includegraphics[width=0.3\linewidth]{photoelectric}
-%	\end{center}
+	
+	\only<1>{\begin{center}
+	\includegraphics[width=0.5\linewidth]{photoelectric}
+	\end{center}}
+	
+	\only<2>{
   \begin{itemize}
 	  \item 对于特定金属而言，入射光频率必须大于某特定值才能产生光电效应，光电效应的发生与否与入射光强度没有关系
 	  \item 光电效应是一种量子效应，无法用 Maxwell 体系的经典电磁理论解释，必须借助\alert{光量子}的概念才能解释
@@ -48,7 +51,7 @@
 	  \]
 	  \scriptsize{其中$E$是出射光电子最大能量，$h\nu$为入射光子能量，$\phi$称为金属的逸出功或功函数（work function）}
 	  \end{formula}
-  \end{itemize}
+  \end{itemize}}
 \end{frame}
 
 \begin{frame}
@@ -260,12 +263,17 @@
 	\frametitle{Child-Langmuir 模型}
 	\framesubtitle{模型概述}
 	Child-Langmuir 模型是研究阴极上\alert{空间电荷限电流（Space-Charge Limited Current, SCLC）}的模型。
+	\only<1>{\begin{center}
+	\includegraphics[width=0.9\linewidth]{child}
+	\end{center}}
+	
+	\only<2>{
 	\begin{background}
 	C. Child 于 1911 年提出 Child 定律，该定律是说在平行两极板间的电压 $V$ 固定的情况下，其极板间电流密度存在最大值 $J$，并且 $J$ 与 $V$ 成 3/2 次方关系，因此又被称为 3/2 次方定律。1911 年发表的情况针对的是离子流，I. Langmuir 在 1913 年将 Child 的方法应用于电子流，因此该定律又被称为 Child-Langmuir 定律。
 	\end{background}
 	\begin{physics}
 	阴极上空间电荷限的本质是：在两极板间的电流产生的空间电荷场会减小发射极的引出电场，当电流大到一定程度时，发射极表面的总引出电场降到 0，逸出的电子无法获得加速，发射电流无法进一步增加，因此电压固定时发射电流存在饱和值。
-	\end{physics}
+	\end{physics}}
 \end{frame}
 
 \begin{frame}
@@ -325,9 +333,14 @@
 	\frametitle{Richardson-Dushman 模型}
 	\framesubtitle{模型概述}
 	Richardson-Dushman 模型是用来研究金属表面热发射现象的模型。采用简并电子气的观点，金属表面附近的电子动能服从 FD 分布，若金属表面温度不为 \SI{0}{K}，则存在较高能态的电子，当其垂直金属表面方向的动能足够大，就有可能克服表面势垒逸出金属表面，形成热发射电流。
+	\only<1>{\begin{center}
+	\includegraphics[width=0.5\linewidth]{richardson}
+	\end{center}}
+	
+	\only<2>{
 	\begin{background}
 	1897 年 J. Thomson 发现电子后，O. Richardson 开始研究热电流现象。1901 年 O. Richardson 发表了他对金属丝上热电流的实验观测结果，发现金属丝上热电流的大小与金属丝的温度成指数关系；1923 年 S. Dushman 得到了热发射电流密度的现代形式，也即 Richardson-Dushman 公式。
-	\end{background}
+	\end{background}}
 \end{frame}
 
 \begin{frame}
@@ -367,10 +380,15 @@
 	\frametitle{Fowler-Nordheim 模型}
 	\framesubtitle{模型概述}
 	Fowler-Nordheim 模型是用来研究固体表面在高引出电场作用下的量子隧穿（即场致发射）电流的模型。
+	\only<1>{\begin{center}
+	\includegraphics[width=0.6\linewidth]{tunnel}
+	\end{center}}
+	
+	\only<2>{
 	\begin{background}
 %	场致发射现象最早可能是 J. Winkler 于 1744 年在研究金属丝阴极时发现：他发现金属丝阴极会自行放电。
 	1897 年 J. Thomson 发现电子后，热发射和光电发射现象先后被发现，人们开始理解能量足够克服金属表面的势垒的电子可以从金属内部发射出来。1913 年，物理学家们开始怀疑金属表面的电子发射中有除了热发射和光电发射现象之外的新的物理现象存在---也就是场致发射现象。1922 年 J. Lilienfeld 发表了第一篇明确地阐述场致发射现象的实验文章。同年，R. Millikan 等人开始对该现象感兴趣并做了实验研究，他们首先画出 $i-V$ 图并试图用直线拟合，然而这种尝试并不成功；随后人们尝试了 $\log(i)-V$ 图及 $\log(i)-V^{1/2}$ 图，依然没有得到线性关系。首次突破在 1928 年出现，C. Lauritsen 发现场致发射的 $\log(i)-1/V$ 图是线性的，J. Oppenheimer 提出了这种发射来源于量子隧穿的观点，随后 R. Fowler 和 L. Nordheim 给出了场致发射电流的解析公式，这就是著名的 Fowler-Nordheim 公式。
-	\end{background}
+	\end{background}}
 \end{frame}
 
 \begin{frame}
@@ -460,8 +478,8 @@
 	\item 光电流正比于可出射电子数
 	\end{itemize}
 	根据以上假设，R. Fowler 获得了光电发射电流 $I$ 的表达式，成功地揭示了拖尾现象的机理。1933 年 L. Dubridge 扩充了 Fowler 的理论，计算了光电发射中光电子的能谱，因此该理论被称为 Fowler-Dubridge 理论。
-	\end{background}
-	我们只演示 Fowler-Dubridge 模型中光电流公式的推导过程。}
+	\end{background}}
+	\only<2>{我们只演示 Fowler-Dubridge 模型中光电流公式的推导过程。}
 	\only<2-3>
 	{\begin{derivation}
 	\only<2>{
@@ -535,17 +553,22 @@
 \begin{frame}
 	\frametitle{Spicer-Dowell 模型}
 	\framesubtitle{三步模型}
-	\only<1>{
+	\only<-2>{
 	光电子发射的三步模型：
 	\begin{itemize}
 	\item 光子\alert{激发（Excitation）}阴极内电子
 	\item 电子\alert{输运（Transport）}到阴极表面
 	\item 电子\alert{逃逸（Escape）}到真空
 	\end{itemize}
+	\only<1>{\begin{center}
+	\includegraphics[width=0.6\linewidth]{3step}
+	\end{center}}
+	
+	\only<2>{
 	\begin{background}
 	Fowler-Dubridge 模型仅仅考虑了阴极中电子在吸收光子后的运动状态，而未考虑光子吸收和电子输运的过程，因此无法用于计算光电子束较细致的参数，例如 QE 和发射度。1958 年 W. Spicer 开发了三步模型，考虑光子吸收和电子输运的过程，成功计算了 QE；2006 年 D. Dowell 利用三步模型，进行了简化并给出了 QE 和发射度的非常简洁的公式，并被实验所验证。
-	\end{background}}
-	\only<2>{
+	\end{background}}}
+	\only<3>{
 	第一步：光子激发阴极内电子
 	\begin{derivation}
 	假设能量为 $h\nu$ 的光子垂直入射光滑金属阴极（沿 $-z$ 方向入射），由于光子被金属中电子吸收是一个泊松过程，因此光子被吸收的概率会随入射深度 $s$ 呈指数衰减，也即：
@@ -558,7 +581,7 @@
 	\]
 	其中 $f_{\mathrm{FD}}(E)$ 为 Fermi-Dirac 分布，$g(E)$ 是能级 $E$ 处的能态密度。
 	\end{derivation}}
-	\only<3>{
+	\only<4>{
 	第二步：电子输运到阴极表面
 	\begin{derivation}
 	被激发到高能态 $E+h\nu$ 的电子开始输运过程。假设被激发的电子运动方向随机，并在 $4\pi$ 方向角均匀分布，再限定被激发的电子能量仅略高于有效逸出功，则电子输运到阴极表面的概率等于电子朝向阴极表面运动并输运过程中无散射的概率（一旦发生散射电子丢失能量，剩余能量不足以克服有效势垒），也即：
@@ -567,7 +590,7 @@
 	\]
 	其中 $\lambda_{e-e}(E+h\nu)$ 是能量为 $E+h\nu$ 电子的散射平均自由程，$\theta$ 为电子运动方向与阴极表面法向（$+z$）的夹角。
 	\end{derivation}}
-	\only<4>{
+	\only<5>{
 	第三步：电子逃逸到真空
 	\begin{derivation}
 	能量为 $E+h\nu$ 的电子以 $\theta$ 角传输至阴极表面时会尝试克服表面势垒而逃逸。假设所有 $+z$ 方向动能大于等于有效势垒高度（有效逸出功与 Fermi 能量之和）的电子都可以逃逸，可得逃逸概率为：
@@ -584,7 +607,11 @@
 	\only<1>{
 	\begin{concept}
 	电子在逃逸出金属阴极表面时要克服表面势垒（真空势垒和镜像电荷势的总和）的作用；阴极表面的高引出场强会降低表面势垒的高度，从而降低电子所感受到的逸出功，这种效应叫做 \alert{Schottky 效应}，电子所感受的逸出功叫做\alert{有效逸出功}。
-	\end{concept}}
+	\end{concept}
+	
+	\begin{center}
+	\includegraphics[width=0.7\linewidth]{schottky}
+	\end{center}}
 	\only<2>{
 	\begin{derivation}
 	对于单个电子而言，在金属阴极表面距离 $x$ 的位置，其电势能为：
@@ -610,7 +637,7 @@
 	\framesubtitle{光阴极的量子效率}
 	利用三步模型，可以计算光阴极的量子效率。
 	\begin{derivation}
-	\[QE = (1-R)\frac{\int_{E_F+\phi_{\mathrm{eff}}}dE\cdot N(E+h\nu)}{123}\]
+	\[\cdots\]
 	\end{derivation}
 	\begin{formula}{光阴极的量子效率}
 	\[
@@ -622,23 +649,41 @@
 \begin{frame}
 	\frametitle{Spicer-Dowell 模型}
 	\framesubtitle{光阴极的初始发射度}
-	利用三步模型，可以得到光阴极的初始发射度：
+	\only<1>{利用三步模型，可以得到光阴极的初始发射度：
+	
+	\begin{center}
+	\includegraphics[width=0.6\linewidth]{emittance}
+	\end{center}}
+	
+	\only<2>{
+	\begin{derivation}
+	\[\cdots\]
+	\end{derivation}
 	\begin{formula}{光阴极的初始发射度}
 	\[
 	\varepsilon_{n} =\sigma\sqrt{\dfrac{\hbar\omega-\phi_{\mathrm{eff}}}{3mc^2}}
 	\]
-	\end{formula}
+	\end{formula}}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Spicer-Dowell 模型}
 	\framesubtitle{光阴极的折射定律}
-	利用三步模型，可以得到光阴极的折射定律：
+	\only<1>{利用三步模型，可以得到光阴极的折射定律：
+	
+	\begin{center}
+	\includegraphics[width=0.6\linewidth]{refraction}
+	\end{center}}
+	
+	\only<2>{
+	\begin{derivation}
+	\[\cdots\]
+	\end{derivation}
 	\begin{formula}{光阴极表面的折射定律}
 	\[
 	\frac{\sin\theta_\mathrm{out}}{\sin\theta_\mathrm{in}}=\sqrt{\frac{E+h\nu}{E+h\nu-\mu-\phi_\mathrm{eff}}}
 	\]
-	\end{formula}
+	\end{formula}}
 \end{frame}
 
 %\subsection{几个量子模型}
@@ -671,47 +716,59 @@
 
 \begin{frame}[label=current]
 	\frametitle{金属光阴极}
-	金属是常见的光阴极材料，其中 Cu 阴极和 Mg 阴极最为常用，LCLS 的光阴极注入器中使用的阴极就是 Cu 阴极。\\[10pt]
+	金属是常见的光阴极材料，其中 Cu 阴极和 Mg 阴极最为常用，LCLS 的光阴极注入器中使用的阴极就是 Cu 阴极。\\~\\
 	
-	金属阴极的特点如下：
+	\only<1>{\begin{center}
+	\includegraphics[width=0.4\linewidth]{metal}
+	\end{center}}
+	
+	\only<2>{金属阴极的特点如下：
 	\begin{itemize}
 	\item 量子效率 QE 较低，一般在 \SIrange[range-phrase = $\sim$]{1e-4}{1e-5}{}
 	\alert{\item 飞秒（fs）级响应时间，可用于产生超短电子束团}
 %	\item 归一化发射度通常在 \SIrange[range-phrase = $\sim$]{0.4}{1.0}{\milli m\cdot\milli rad/\milli m} 之间
 	\item 对工作环境真空度要求低，一般 \SI{1e-8}{Torr} 即可工作
-	\item 逸出功通常在 \SIrange[range-phrase = $\sim$]{3.5}{5}{eV} 范围，因此只能采用紫外（UV）激光（常用绿光倍频 \SI{266}{\nano m}）照射产生光电子
+	\item 逸出功通常在 \SIrange[range-phrase = $\sim$]{3.5}{5}{eV} 范围，因此只能采用紫外（UV）激光（常用绿光倍频到 \SI{266}{\nano m}）照射产生光电子
 %	\item 性质稳定，可以在大气环境下短暂存放，方便加工与运输
 %	\item 工作寿命长，大都在 \SI{1000}{h} 以上
-	\end{itemize}
+	\end{itemize}}
 \end{frame}
 
 \begin{frame}[label=current]
 	\frametitle{半导体光阴极}
 	\framesubtitle{PEA 光阴极}
-	半导体光阴极也是近年来使用较广的阴极，按照半导体的电子亲和势可分为正电子亲和势（PEA）阴极及负电子亲和势（NEA）阴极。常见的 PEA 阴极主要是碱金属锑化物及碱金属碲化物，如 $\sf Cs_2Te,Cs_3Sb,K_3Sb,Na_3Sb,Li_3Sb$，近年来多碱金属锑化物阴极也逐渐流行起来，例如 $\sf Na_2KSb,K_2CsSb$ 等。FLASH 所使用的光阴极就是 $\sf Cs_2Te$ 阴极。\\[10pt]
+	半导体光阴极也是近年来使用较广的阴极，按照半导体的电子亲和势可分为正电子亲和势（PEA）阴极及负电子亲和势（NEA）阴极。常见的 PEA 阴极主要是碱金属锑化物及碱金属碲化物，如 $\sf Cs_2Te,Cs_3Sb,K_3Sb,Na_3Sb,Li_3Sb$，近年来多碱金属锑化物阴极也逐渐流行起来，例如 $\sf Na_2KSb,K_2CsSb$ 等。FLASH 所使用的光阴极就是 $\sf Cs_2Te$ 阴极。\\~\\
 	
-	PEA 光阴极的特点如下：
+	\only<1>{\begin{center}
+	\includegraphics[width=0.3\linewidth]{PEA}
+	\end{center}}
+	
+	\only<2>{PEA 光阴极的特点如下：
 	\begin{itemize}
 	\item 量子效率 QE 较高，一般大于 5\%
 	\item 皮秒（ps）级响应时间
 	\item 对工作环境真空度要求相对较低，\SI{1e-9}{Torr} 即可工作
 	\item 需要紫外（UV）激光驱动
-	\end{itemize}
+	\end{itemize}}
 \end{frame}
 
 \begin{frame}[label=current]
 	\frametitle{半导体光阴极}
 	\framesubtitle{NEA 光阴极}
-	常见的 NEA 阴极主要是砷化镓 $\sf GaAs$ 及氮化镓 $\sf GaN$ 阴极，JLab 的能量回收加速器 ERL 中使用的就是 $\sf GaAs$ 阴极。\\[10pt]
+	常见的 NEA 阴极主要是砷化镓 $\sf GaAs$ 及氮化镓 $\sf GaN$ 阴极，JLab 的能量回收加速器 ERL 中使用的就是 $\sf GaAs$ 阴极。\\~\\
 	
-	NEA 光阴极的特点如下：
+	\only<1>{\begin{center}
+	\includegraphics[width=0.3\linewidth]{NEA}
+	\end{center}}
+	
+	\only<2>{NEA 光阴极的特点如下：
 	\begin{itemize}
 	\alert{\item 量子效率 QE 很高，可达 10\%}
 	\item 响应时间很长，一般在几十皮秒（ps）量级
 	\item 对工作环境真空度要求很高，低于 \SI{1e-10}{Torr} 的真空度下才可以正常工作，且需要低温环境
 	\item 近红外（NIR）激光即可驱动
 	\alert{\item 可产生极化电子束}
-	\end{itemize}
+	\end{itemize}}
 \end{frame}
 
 \subsection{几种新型光阴极}
@@ -719,50 +776,79 @@
 \begin{frame}[label=current]
 	\frametitle{表面等离激元光阴极}
 	\framesubtitle{表面等离激元}
-	Maxwell 电磁理论预言在两种介电常数实部反号的介质的交界面存在一种沿交界面传播的电磁-电荷密度振荡波，也称做\alert{表面等离激元（Surface Plasmon Polaritons, SPPs）}。利用经典的 Drude 模型可导出金属的介电常数实部为负，因此金属与介质交界面可以存在 SPPs。\\[10pt]
+	\only<1-2>{Maxwell 电磁理论预言在两种介电常数实部反号的介质的交界面存在一种沿交界面传播的电磁-电荷密度振荡波，也称做\alert{表面等离激元（Surface Plasmon Polaritons, SPPs）}。利用经典的 Drude 模型可导出金属的介电常数实部为负，因此金属与介质交界面可以存在 SPPs。\\~\\
 	
-	表面等离激元具有下面特点：
+	\only<1>{\begin{center}
+	\includegraphics[width=0.9\linewidth]{sps}
+	\end{center}}
+	
+	\only<2>{表面等离激元具有下面特点：
 	\begin{itemize}
-	\item 入射光必须设法增加横向动量才能激发 SPPs
-	\item SPPs 存在一个特征频率，等离子体频率低于此特征频率的金属表面才能支持 SPPs
+	\item SPPs 存在一个频率上限（$\omega_P/\sqrt{2}$），低于此频率的光才能激发 SPPs
+	\item 入射光必须设法增加横向动量（横向波数）才能激发 SPPs
 	\item SPPs 沿交界面传播，垂直于交界面衰减
 	\item 特定波长和角度入射的光可被 SPPs \alert{完全共振吸收}，此时交界面处会形成\alert{极高电场}
+	\end{itemize}}}
+	\only<3>{由于 SPPs 有提高入射光吸收率/增强阴极表面光场的性质，可以利用 SPPs 来加强光电发射，提高阴极的量子效率。在金属阴极表面激发起 SPPs，一般采用下面两种方式：
+	\begin{itemize}
+	\item 利用金属表面的光栅结构来提高入射光的横向波数，这种方式对应 \alert{NPC（Nano-Patterned Cathode）阴极}
+	\item 通过将光射入电介质以提高入射光的横向波数，这种方式对应 \alert{ATR（Attenuated Total Reflectance）阴极}
 	\end{itemize}
+	\begin{center}
+	\includegraphics[width=0.6\linewidth]{excitation}
+	\end{center}}
 \end{frame}
 
 \begin{frame}[label=current]
 	\frametitle{表面等离激元光阴极}
 	\framesubtitle{NPC 光阴极}
-	表面等离激元光阴极就是利用特定激光驱动下金属和空气/真空交界面上存在的表面等离激元，对激光吸收和电子发射进行增强的光阴极。\\[10pt]
+	在金属表面刻上百纳米（nm）级的周期性结构，就构成了 NPC 光阴极。
+	\begin{physics}
+	激光入射到该纳米结构（对于激光的作用是反射光栅）时，其横向动量增加，能在表面激发起 SPPs，达到强化光电发射的目的。
+	\end{physics}
 	
-	NPC 光阴极具有下面特点：
+	\only<1>{\begin{center}
+	\includegraphics[width=0.3\linewidth]{NPC}
+	\end{center}}
+	
+	\only<2>{NPC 光阴极具有下面特点：
 	\begin{itemize}
-	\item 沿交界面传播，垂直于交界面衰减
-	\item 特定波长和角度入射的光可被 SPPs 完全共振吸收，此时发射率为 0
-	\item 共振吸收时，交界面处会形成极高电场
-	\end{itemize}
+	\item 量子效率可以比同材料光滑阴极高 2 $\sim$ 3 个量级
+	\item 由于表面有周期性纳米结构，发射度一般比同材料光滑阴极更大
+	\item 多采用多光子光电发射，尽可能利用 SPPs 对表面上激光功率密度的增强
+	\item 可直接应用于微波电子枪中
+	\end{itemize}}
 \end{frame}
 
 \begin{frame}[label=current]
 	\frametitle{表面等离激元光阴极}
 	\framesubtitle{ATR 光阴极}
-	表面等离激元光阴极就是利用特定激光驱动下金属和空气/真空交界面上存在的表面等离激元，对激光吸收和电子发射进行增强的光阴极。\\[10pt]
+	在透明电介质上镀一层几十纳米（nm）厚的金属薄膜，就构成了 ATR 光阴极。
+	\begin{physics}
+	激光从透明电介质端射入，其横向动量增加，因而能在金属与真空的交界面激发起 SPPs，达到强化光电发射的目的。与一般光阴极不同，激光并非是正入射到金属表面，打出反射电子形成光电流，而是背入射到金属表面，其激发的光电子需穿过几十纳米厚的金属薄膜出射而形成光电流。
+	\end{physics}
 	
+	\only<1>{\begin{center}
+	\includegraphics[width=0.4\linewidth]{ATR}
+	\end{center}}
+	
+	\only<2>{
 	ATR 光阴极具有下面特点：
 	\begin{itemize}
-	\item 沿交界面传播，垂直于交界面衰减
-	\item 特定波长和角度入射的光可被 SPPs 完全共振吸收，此时发射率为 0
-	\item 共振吸收时，交界面处会形成极高电场
-	\end{itemize}
+	\item 量子效率可以比同材料光滑阴极高 1 $\sim$ 2 个量级
+	\item 由于电子出射面光滑，发射度与同材料光滑阴极相当
+	\item 激光采用背入射方式激发光电子
+	\item 应用于微波电子枪时的微波泄漏的问题还需解决
+	\end{itemize}}
 \end{frame}
 
-\begin{frame}[label=current]
-	\frametitle{冷阴极}
-\end{frame}
-
-\begin{frame}[label=current]
-	\frametitle{复合阴极}
-\end{frame}
+%\begin{frame}[label=current]
+%	\frametitle{冷阴极}
+%\end{frame}
+%
+%\begin{frame}[label=current]
+%	\frametitle{复合阴极}
+%\end{frame}
 
 \end{document}
 
