@@ -5,5 +5,5 @@
 *.snm
 *.gz
 *.toc
-*.pdf
+course.pdf
 .DS_Store
