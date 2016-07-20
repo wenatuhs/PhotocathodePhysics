@@ -8,32 +8,98 @@
 \setCJKsansfont{PingFang SC}
 \setCJKmonofont{Kaiti SC}
 
+\usepackage[xcolor, framemethod=tikz]{mdframed}
 \usepackage{multicol}
 \usepackage{graphicx}
 \usepackage{siunitx}
 
 \newcommand{\zskip}{\!\!\!}
 \newcommand{\Zskip}{\zskip\zskip\zskip}
+\definecolor{OliveGreen}{rgb}{0,0.6,0}
+
+\mdfdefinestyle{bgstyle}{
+	linecolor=darkgray,
+	linewidth=0.8pt,
+	roundcorner=5pt,
+	frametitlerule=true,
+	frametitlebackgroundcolor=darkgray,
+	frametitle={\small\textcolor{white}{物理背景}},
+	innertopmargin=\topskip}
+	
+\mdfdefinestyle{conceptstyle}{
+	linecolor=red,
+	linewidth=0.8pt,
+	roundcorner=5pt,
+	frametitlerule=true,
+	frametitlebackgroundcolor=red,
+	frametitle={\small\textcolor{white}{物理概念}},
+	innertopmargin=\topskip}
+	
+\mdfdefinestyle{physicsstyle}{
+	linecolor=blue,
+	linewidth=0.8pt,
+	roundcorner=5pt,
+	frametitlerule=true,
+	frametitlebackgroundcolor=blue,
+	frametitle={\small\textcolor{white}{物理图像}},
+	innertopmargin=\topskip}
+	
+\mdfdefinestyle{formulastyle}{
+	linecolor=OliveGreen,
+	linewidth=0.8pt,
+	roundcorner=5pt,
+	frametitlerule=true,
+	frametitlebackgroundcolor=OliveGreen,
+	innertopmargin=\topskip}
+	
+\mdfdefinestyle{derivationstyle}{
+	linecolor=lightgray,
+	linewidth=0.8pt,
+	roundcorner=5pt,
+	frametitlerule=true,
+	frametitlebackgroundcolor=lightgray,
+	frametitle={\small\textcolor{white}{推导}},
+	innertopmargin=\topskip}
 
 \newenvironment<>{background}
-	{\setbeamercolor{block title}{bg=darkgray}\begin{block}{\tiny\bf 物理背景}\begin{scriptsize}}
-  {\end{scriptsize}\end{block}}
+	{\begin{mdframed}[style=bgstyle]}
+  {\end{mdframed}}
 
 \newenvironment<>{concept}
-	{\begin{alertblock}{\tiny\bf 物理概念}}
-  {\end{alertblock}}
+	{\begin{mdframed}[style=conceptstyle]}
+  {\end{mdframed}}
 
 \newenvironment<>{physics}
-	{\begin{block}{\tiny\bf 物理图像}\begin{scriptsize}}
-  {\end{scriptsize}\end{block}}
-  
-\newenvironment<>{formula}[1]
-	{\begin{minipage}{\linewidth}\begin{exampleblock}{\tiny\bf #1}}
-  {\end{exampleblock}\end{minipage}\\[10pt]}
+	{\begin{mdframed}[style=physicsstyle]}
+  {\end{mdframed}}
   
 \newenvironment<>{derivation}
-	{\begin{minipage}{\linewidth}\setbeamercolor{block title}{bg=lightgray}\begin{block}{\tiny\bf 推导}\begin{scriptsize}}
-  {\end{scriptsize}\end{block}\end{minipage}\\[10pt]}
+	{\begin{mdframed}[style=derivationstyle]}
+  {\end{mdframed}}
+  
+\newenvironment<>{formula}[1]
+	{\begin{mdframed}[style=formulastyle, frametitle={\small\textcolor{white}{#1}}]}
+  {\end{mdframed}}
+
+%\newenvironment<>{background}
+%	{\setbeamercolor{block title}{bg=darkgray}\begin{block}{\sf\bf 物理背景}\begin{scriptsize}}
+%  {\end{scriptsize}\end{block}}
+
+%\newenvironment<>{concept}
+%	{\begin{alertblock}{\sf\bf 物理概念}}
+%  {\end{alertblock}}
+
+%\newenvironment<>{physics}
+%	{\begin{block}{\sf\bf 物理图像}\begin{scriptsize}}
+%  {\end{scriptsize}\end{block}}
+  
+%\newenvironment<>{formula}[1]
+%	{\begin{minipage}{\linewidth}\begin{exampleblock}{\sf\bf #1}}
+%  {\end{exampleblock}\end{minipage}\\[10pt]}
+
+%\newenvironment<>{derivation}
+%	{\begin{minipage}{\linewidth}\setbeamercolor{block title}{bg=lightgray}\begin{block}{\sf\bf 推导}\begin{scriptsize}}
+%  {\end{scriptsize}\end{block}\end{minipage}\\[10pt]}
 
 %--------------------------------------------------------------------------------
 
